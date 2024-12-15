@@ -13,7 +13,7 @@ env:
 jobs:
 
   lint:
-    name: Frontend Linting
+    name: Frontend LINT JOB
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -39,7 +39,7 @@ jobs:
           npm run lint -- --fix
 
   test:
-    name: FE Testing
+    name: Frontend TEST JOB
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -54,7 +54,7 @@ jobs:
         run: |
           npm run test
   build:
-    name: Build & Push Docker image
+    name: Frontend BUILD JOB
     runs-on: ubuntu-latest
     needs: [lint, test]
     defaults:
