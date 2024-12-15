@@ -92,7 +92,7 @@ jobs:
           REPOSITORY: frontend
           IMAGE_TAG: latest
         run: |
-          aws eks update-kubeconfig --name cluster
+          aws eks update-kubeconfig --name eks-baoph1-cluster
           export EXTERNALIP=$(kubectl get svc backend -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}{"\n"}{.status.loadBalancer.ingress[0].ip}')
           echo $EXTERNALIP
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG --build-arg=REACT_APP_MOVIE_API_URL=http://$EXTERNALIP .
@@ -131,7 +131,7 @@ jobs:
 
       - name: Update kubeconfig
         run: |
-          aws eks update-kubeconfig --name cluster
+          aws eks update-kubeconfig --name eks-baoph1-cluster
 
       - name: Set Docker image in Kustomize
         env:
