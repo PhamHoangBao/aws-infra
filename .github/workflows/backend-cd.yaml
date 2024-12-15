@@ -158,6 +158,9 @@ jobs:
       - name: Update kubeconfig
         run: aws eks --region us-east-1 update-kubeconfig --name cluster
 
+      - name: Kube version
+        run: kubectl version
+
       - name: Get kube context config
         run: kubectl config current-context
 
