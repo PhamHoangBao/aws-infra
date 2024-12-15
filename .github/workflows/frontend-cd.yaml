@@ -14,7 +14,7 @@ env:
 
 jobs:
   lint:
-    name: Frontend Linting
+    name: Frontend Lint Job
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -40,7 +40,7 @@ jobs:
           npm run lint -- --fix
 
   test:
-    name: Frontend Testing
+    name: Frontend Test Job
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -58,7 +58,7 @@ jobs:
           npm test
 
   build:
-    name: Build and Push Docker image to Amazon ECR
+    name: Build and Push Docker img to ECR
     runs-on: ubuntu-latest
     needs: [lint, test]
     defaults:
@@ -80,7 +80,7 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
-      - name: Login to Amazon ECR
+      - name: Login to ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
         with:
@@ -132,11 +132,6 @@ jobs:
       - name: Update kubeconfig
         run: |
           aws eks update-kubeconfig --name cluster
-
-      - name: Run init.sh
-        run:  |
-          ./init.sh || true
-        working-directory: ./setup
 
       - name: Set Docker image in Kustomize
         env:
