@@ -170,6 +170,10 @@ jobs:
         run: kustomize edit set image backend=$REGISTRY/$REPOSITORY:$IMAGE_TAG
         working-directory: ./starter/backend/k8s
 
-      - name: Apply Kubernetes resources
-        run: kustomize build | kubectl apply --validate=false -f -
+      - name: Apply Kubernetes resources kustomize build
+        run: kustomize build
+        working-directory: ./starter/backend/k8s
+
+      - name: Apply Kubernetes resources kubectl apply
+        run: kubectl apply --validate=false -f -
         working-directory: ./starter/backend/k8s
