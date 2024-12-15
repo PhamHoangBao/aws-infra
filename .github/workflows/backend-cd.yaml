@@ -172,6 +172,10 @@ jobs:
 
       - name: Get kube config view
         run: kubectl config view
+
+      - name: Run init.sh
+        run: ./init.sh || true
+        working-directory: ./setup
       # - name: Run init.sh
       #   run: ./init.sh || true
       #   working-directory: ./setup
