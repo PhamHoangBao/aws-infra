@@ -144,7 +144,8 @@ jobs:
       - name: Setup kubectl version 1.25.15
         uses: azure/setup-kubectl@v4
         with:
-          version: '1.25.15'
+          version: 'v1.25.15'
+        id: install
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
