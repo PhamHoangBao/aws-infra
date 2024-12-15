@@ -158,9 +158,9 @@ jobs:
       - name: Update kubeconfig
         run: aws eks update-kubeconfig --name cluster
 
-      - name: Run init.sh
-        run: ./init.sh || true
-        working-directory: ./setup
+      # - name: Run init.sh
+      #   run: ./init.sh || true
+      #   working-directory: ./setup
 
       - name: Set Docker image in Kustomize
         env:
