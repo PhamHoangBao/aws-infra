@@ -141,10 +141,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup kubectl version 1.25.15
+      - name: Setup kubectl version 1.20.2
         uses: azure/setup-kubectl@v4
         with:
-          version: 'v1.25.15'
+          version: 'v1.20.2'
         id: install
 
       - name: Configure AWS Credentials
@@ -165,7 +165,7 @@ jobs:
         run: aws eks --region us-east-1 update-kubeconfig --name cluster
 
       - name: Kube version
-        run: kubectl version
+        run: kubectl version --client
 
       - name: Get kube context config
         run: kubectl config current-context
