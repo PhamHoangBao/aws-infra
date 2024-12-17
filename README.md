@@ -1,3 +1,26 @@
+# Result:
+
+1. Get the load balancer external IP:
+   
+   ![Kubectl Get SVC](./screenshots/KubectlPodSvc.png)
+
+2. Backend docker image.
+
+   ![Web API](./screenshots/DockerImageBackend.png) 
+
+3. Front end docker image
+
+   ![Get pods](./screenshots/DockerImageFrontEnd.png) 
+
+4. Access the Backend API.
+
+   ![Web API](./screenshots/BackendAPIURL.png)
+
+5. Access the Frontend API
+
+   ![Get pods](./screenshots/FrontendAPIURL.png) 
+
+
 # Movie Picture Pipeline
 
 You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use Github Actions to automate testing, building and deploying their applications to an existing Kubernetes cluster.
