@@ -18,7 +18,7 @@ export default function App() {
 
       {selectedMovie && (
         <>
-          <h1>Movie Detailsss</h1>
+          <h1>Movie Detailssss</h1>
           <MovieDetails movie={selectedMovie} />
         </>
       )}
