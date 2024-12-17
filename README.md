@@ -14,7 +14,7 @@
 
 4. Access the Backend API.
 
-   ![Web API](./screenshots/BackendAPIURL.png) #
+   ![Web API](./screenshots/BackendAPIURL.png)
 
 5. Access the Frontend API
 
