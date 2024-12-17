@@ -156,7 +156,7 @@ jobs:
           mask-password: "true"
 
       - name: Update kubeconfig
-        run: aws eks --region us-east-1 update-kubeconfig --name eks-baoph1-cluster
+        run: aws eks --region us-east-1 update-kubeconfig --name baoph1-cluster
 
       - name: Set Docker image in Kustomize
         env:
